@@ -48,3 +48,6 @@ code {
 a {
   text-decoration: none;
 }
+body {
+  background-color: var(--clr-black-2);
+}

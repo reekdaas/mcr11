@@ -1,0 +1,15 @@
+.starMovies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-around;
+
+  padding: 1rem 2rem;
+}
+
+.starMoviePage > h1 {
+  margin: 5rem auto;
+  text-align: center;
+  color: #fff;
+  font-size: 3rem;
+}

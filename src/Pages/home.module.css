@@ -1,0 +1,15 @@
+.movies {
+  padding: 1rem;
+
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.homePage > h1 {
+  color: #fff;
+  text-align: center;
+  margin: 5rem auto;
+  font-size: 3rem;
+}

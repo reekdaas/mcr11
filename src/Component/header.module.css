@@ -1,0 +1,40 @@
+.header {
+  background-color: var(--clr-lighten-3);
+  height: 15vh;
+  color: var(--clr-black-1);
+  padding: 1rem 0.5rem;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header h2 {
+  font-size: 2rem;
+}
+
+.header input {
+  min-width: 20rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--clr-black-1);
+  border-radius: 2%;
+  /* font-size: 1.25rem; */
+}
+
+.header input:focus {
+  outline: none;
+}
+
+.linkContainer > ul {
+  min-width: 15rem;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.link {
+  font-size: 1.2rem;
+  color: var(--clr-black-1);
+  font-weight: 700;
+}

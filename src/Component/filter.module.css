@@ -1,0 +1,20 @@
+.filterComponent {
+  display: flex;
+  color: #fff;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.filterComponent > button {
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-lighten-3);
+  border: 2px solid var(--clr-dark-2);
+
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.filterComponent > button:hover {
+  opacity: 0.7;
+}
