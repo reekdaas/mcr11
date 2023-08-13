@@ -12,7 +12,7 @@ export default function Home() {
   } = useMovieContext();
   const { filterState } = UseFilterContext();
   const filteredMovie = filterHelper(movieData, filterState);
-
+  // console.log(movieData);
   return (
     <div className={styles.homePage}>
       <Header />

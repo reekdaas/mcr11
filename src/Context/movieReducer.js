@@ -19,7 +19,18 @@ export const initialMovieState = {
 export default function movieReducer(state, { type, payload }) {
   switch (type) {
     case "ADD_MOVIE": {
+      let newGenre;
       const newMovie = [...state.movieData, payload];
+      const isGenrePresnt = state.movieData.find(
+        (movie) => movie.genre === payload.genre
+      );
+      // console.log(isGenrePresnt);
+      if (isGenrePresnt) {
+        newGenre = state.genre;
+      } else {
+        newGenre = [...state.genre, isGenrePresnt?.genre];
+      }
+
       localStorage.removeItem("movieList");
       localStorage.setItem("movieList", JSON.stringify(newMovie));
 

@@ -15,8 +15,32 @@ const inputsArray = [
   "imageURL",
 ];
 
+const initialFormData = {
+  title: "",
+  year: "",
+  genre: "",
+  rating: "",
+  director: "",
+  cast: "",
+  summary: "",
+  imageURL: "",
+};
+
 export function Input({ value, handleChange, initialValue }) {
-  return (
+  return value === "year" || value === "rating" ? (
+    <div className={styles.rowDiv}>
+      {" "}
+      <label htmlFor={value}>{value}</label>
+      <input
+        type="number"
+        name={value}
+        onChange={handleChange}
+        id={value}
+        value={initialValue}
+        required
+      />
+    </div>
+  ) : (
     <div className={styles.rowDiv}>
       {" "}
       <label htmlFor={value}>{value}</label>
@@ -35,16 +59,7 @@ export function Input({ value, handleChange, initialValue }) {
 export default function AddForm() {
   const { movieDispatch } = useMovieContext();
 
-  const [formData, setFormData] = useState({
-    title: "",
-    year: "",
-    genre: "",
-    rating: "",
-    director: "",
-    cast: "",
-    summary: "",
-    imageURL: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
   const handleFormdataChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -53,24 +68,27 @@ export default function AddForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     movieDispatch({ type: "ADD_MOVIE", payload: { ...formData, id: uuid() } });
+    setFormData(initialFormData);
   };
-  console.log(formData);
+  // console.log(formData);
   return (
     <div className={styles.addMovie}>
       <Header />
-      <h1>Add Movie</h1>
-      <form onSubmit={handleSubmit}>
-        {inputsArray.map((data, i) => (
-          <Input
-            value={data}
-            key={i}
-            initialValue={formData[data]}
-            handleChange={handleFormdataChange}
-          />
-        ))}
+      <div className={styles.formContainer}>
+        <h1>Add Movie</h1>
+        <form onSubmit={handleSubmit}>
+          {inputsArray.map((data, i) => (
+            <Input
+              value={data}
+              key={i}
+              initialValue={formData[data]}
+              handleChange={handleFormdataChange}
+            />
+          ))}
 
-        <button type="submit">Submit</button>
-      </form>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }

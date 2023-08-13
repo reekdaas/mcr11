@@ -1,6 +1,13 @@
 /* .addMovie  */
-
-.addMovie > form {
+.formContainer {
+  padding: 1rem 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+.formContainer > form {
   width: 20rem;
   min-height: 70vh;
   border: 2px solid var(--clr-dark-2);
